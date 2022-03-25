@@ -25,11 +25,14 @@
   "scripts": {
     "prepublishOnly": "npm run build",
     "lint": "eslint --ext .ts,.js .",
-    "build": "rollup --config"
+    "build": "rollup --config",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "dependencies": {
     "bowser": "^2.9.0",
-    "tslib": "^1.11.0"
+    "tslib": "^1.11.0",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@metamask/eslint-config": "^3.1.0",
@@ -43,5 +46,6 @@
     "rollup-plugin-typescript2": "^0.27.1",
     "static-server": "^2.2.1",
     "typescript": "^3.9.5"
-  }
+  },
+  "snyk": true
 }
